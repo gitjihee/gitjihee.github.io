@@ -10,7 +10,7 @@ function includeHTML(){
 
                 if(this.readyState == 4){
                     if(this.status == 200) {$el.innerHTML = this.responseText}
-                    // if(this.status == 404) {$el.innerHTML = "page not found"}
+                    if(this.status == 404) {$el.innerHTML = "page not found"}
                     $el.removeAttribute("data-include");
                     includeHTML();
                 }
