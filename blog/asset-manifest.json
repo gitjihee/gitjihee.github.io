@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gitjihee/blog/static/css/main.3337cfcd.css",
+    "main.js": "/gitjihee/blog/static/js/main.64b44cd5.js",
+    "static/js/787.f587e8d5.chunk.js": "/gitjihee/blog/static/js/787.f587e8d5.chunk.js",
+    "index.html": "/gitjihee/blog/index.html",
+    "main.3337cfcd.css.map": "/gitjihee/blog/static/css/main.3337cfcd.css.map",
+    "main.64b44cd5.js.map": "/gitjihee/blog/static/js/main.64b44cd5.js.map",
+    "787.f587e8d5.chunk.js.map": "/gitjihee/blog/static/js/787.f587e8d5.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3337cfcd.css",
+    "static/js/main.64b44cd5.js"
+  ]
+}
