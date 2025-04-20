@@ -408,6 +408,7 @@ textarea {
   padding: 1rem 1.6rem;
   border-radius: 0.6rem;
   font-size: var(--fs-sm);
+  text-align: center;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -421,6 +422,9 @@ textarea {
 @media (max-width: 768px) {
   .project-card {
     width: calc(50% - 1.2rem);
+  }
+  .toast {
+    width: 60%;
   }
 }
 @media (max-width: 480px) {
