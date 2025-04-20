@@ -424,7 +424,7 @@ textarea {
     width: calc(50% - 1.2rem);
   }
   .toast {
-    width: 60%;
+    width: 70%;
   }
 }
 @media (max-width: 480px) {
