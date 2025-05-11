@@ -52,8 +52,6 @@ button {
 
 :root {
   --color-primary: #f28b82;
-  --color-dark: #333;
-  --color-light: #fffaf7;
   --fs-base: 1.6rem;
   --fs-sm: 1.4rem;
   --fs-lg: 2rem;
@@ -67,7 +65,6 @@ button {
 
 html {
   font-size: 62.5%;
-  scroll-behavior: smooth;
 }
 
 body {
@@ -183,7 +180,7 @@ textarea {
   color: #fff;
 }
 
-.wrapper.scrolled {
+.wrap.scrolled {
   padding-top: 5.2rem;
 }
 
@@ -232,9 +229,12 @@ textarea {
   padding: 0.8rem 1.2rem;
   transition: color 0.2s;
 }
+.header .gnb .gnb-item a.active {
+  color: var(--color-primary);
+}
 
 .section {
-  padding: 6rem 2.4rem;
+  padding: 4rem 2.4rem;
   scroll-margin-top: 5.6rem;
 }
 .section:first-child {
@@ -242,9 +242,6 @@ textarea {
 }
 .section#about {
   background-color: #fff4ec;
-}
-.section#skills {
-  background-color: #f0f8f4;
 }
 .section#portfolio {
   background-color: #fff2dd;
@@ -265,12 +262,12 @@ textarea {
   justify-content: space-between;
   font-size: var(--fs-sm);
   background-color: #2e2e2e;
-  color: var(--color-light);
+  color: #fffaf7;
   padding: 1.6rem 2.4rem;
 }
 
 .about-block {
-  line-height: 1.6;
+  line-height: 1.8;
 }
 .about-block + .about-block {
   margin-top: 4rem;
@@ -282,10 +279,10 @@ textarea {
   gap: 0.4rem;
 }
 .skill-badge-list .fade-item {
-  font-size: var(--fs-sm);
-  padding: 0.3em 0.6em;
+  padding: 0.5em 0.75em;
   border-radius: 0.4rem;
   font-weight: 600;
+  line-height: 1;
 }
 .skill-badge-list .fade-item:nth-child(1) {
   background-color: #e3f2fd;
@@ -331,7 +328,6 @@ textarea {
   border-radius: 1.2rem;
   padding: 2.4rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-  transition: transform 0.2s ease;
   width: calc(33.333% - 1.6rem);
   border: 1px solid transparent;
 }
@@ -419,10 +415,12 @@ textarea {
   pointer-events: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .project-card {
     width: calc(50% - 1.2rem);
   }
+}
+@media (max-width: 768px) {
   .toast {
     width: 70%;
   }

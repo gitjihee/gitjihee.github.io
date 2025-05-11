@@ -23,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>
         <div class="card-body">
           <div class="card-summary">
-            ${project.description}
+            <ul class="desc-list">
+              ${project.description.map(item => `<li class="desc-item">${item}</li>`).join('')}
+            </ul>
           </div>
         </div>            
         <div class="btn-area">
@@ -51,6 +53,39 @@ document.addEventListener("DOMContentLoaded", function () {
       wrap.classList.remove('scrolled');
       header.classList.remove('scrolled');  
     }
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.gnb a');
+
+    let currentId = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 52;
+
+      if (scrollY >= sectionTop) {
+        currentId = section.getAttribute('id');
+      }
+    });
+  
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === `#${currentId}`) {
+        link.classList.add('active');
+      }
+
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+    
+        const targetId = link.getAttribute('href').replace('#', '');
+        const targetEl = document.getElementById(targetId);
+        if (!targetEl) return;
+    
+        const offsetTop = targetEl.offsetTop - 52;
+        window.scrollTo({
+          top: offsetTop,
+          behavior: 'smooth'
+        });
+      });
+    });
   }
 
 
@@ -63,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: 'top 40%',
+        start: 'top 60%',
         toggleActions: 'play none none none',
         // markers: true,
       }
@@ -72,8 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
     tl.from(items, {
       opacity: 0,
       y: 20,
-      stagger: 0.15,
-      duration: 0.6,
+      stagger: 0.3,
+      duration: 0.7,
       ease: 'power2.out'
     });
   });
