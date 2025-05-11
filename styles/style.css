@@ -371,7 +371,6 @@ textarea {
   flex-grow: 1;
 }
 .project-card .card-summary {
-  font-size: var(--fs-sm);
   line-height: 1.6;
 }
 .project-card .btn-area {
