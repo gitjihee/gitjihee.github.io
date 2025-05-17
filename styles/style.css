@@ -52,6 +52,7 @@ button {
 
 :root {
   --color-primary: #f28b82;
+  --color-dark: #2e2e2e;
   --fs-xs: 1rem;
   --fs-sm: 1.4rem;
   --fs-base: 1.6rem;
@@ -408,6 +409,19 @@ textarea {
 .project-detail .detail-list .list-item {
   font-size: 1.5rem;
   line-height: 1.7;
+  padding-left: 1rem;
+  position: relative;
+}
+.project-detail .detail-list .list-item::before {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background: var(--color-dark);
+  position: absolute;
+  left: 0;
+  top: 12px;
 }
 
 .contact-form {

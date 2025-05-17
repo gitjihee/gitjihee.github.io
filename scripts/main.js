@@ -137,9 +137,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </ul>
         <h4 class="detail-title">프로젝트 회고</h4>
         <ul class="detail-list">
-          <li class="list-item">
-            ${project.memory}
-          </li>
+          ${project.memory.map(item => `<li class="list-item">${item}</li>`).join('')}
         </ul>
       </div> 
       <div class="btn-area">
