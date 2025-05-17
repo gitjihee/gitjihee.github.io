@@ -52,8 +52,9 @@ button {
 
 :root {
   --color-primary: #f28b82;
-  --fs-base: 1.6rem;
+  --fs-xs: 1rem;
   --fs-sm: 1.4rem;
+  --fs-base: 1.6rem;
   --fs-lg: 1.8rem;
   --fs-xl: 4.8rem;
   --space-xxs: 0.4rem;
@@ -180,6 +181,13 @@ textarea {
   color: #fff;
 }
 
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-size: 2.4rem;
+  color: #1f1f1f;
+  cursor: pointer;
+}
+
 .wrap.scrolled {
   padding-top: 5.2rem;
 }
@@ -278,40 +286,40 @@ textarea {
   flex-wrap: wrap;
   gap: 0.4rem;
 }
-.skill-badge-list .fade-item {
+.skill-badge-list .badge-item {
   padding: 0.5em 0.75em;
   border-radius: 0.4rem;
   font-weight: 600;
   line-height: 1;
 }
-.skill-badge-list .fade-item:nth-child(1) {
+.skill-badge-list .badge-item:nth-child(1) {
   background-color: #e3f2fd;
 }
-.skill-badge-list .fade-item:nth-child(2) {
+.skill-badge-list .badge-item:nth-child(2) {
   background-color: #e8f5e9;
 }
-.skill-badge-list .fade-item:nth-child(3) {
+.skill-badge-list .badge-item:nth-child(3) {
   background-color: #fff3e0;
 }
-.skill-badge-list .fade-item:nth-child(4) {
+.skill-badge-list .badge-item:nth-child(4) {
   background-color: #ede7f6;
 }
-.skill-badge-list .fade-item:nth-child(5) {
+.skill-badge-list .badge-item:nth-child(5) {
   background-color: #f3e5f5;
 }
-.skill-badge-list .fade-item:nth-child(6) {
+.skill-badge-list .badge-item:nth-child(6) {
   background-color: #e0f7fa;
 }
-.skill-badge-list .fade-item:nth-child(7) {
+.skill-badge-list .badge-item:nth-child(7) {
   background-color: #f9fbe7;
 }
-.skill-badge-list .fade-item:nth-child(8) {
+.skill-badge-list .badge-item:nth-child(8) {
   background-color: #fbe9e7;
 }
-.skill-badge-list .fade-item:nth-child(9) {
+.skill-badge-list .badge-item:nth-child(9) {
   background-color: #edeef0;
 }
-.skill-badge-list .fade-item:nth-child(10) {
+.skill-badge-list .badge-item:nth-child(10) {
   background-color: #fce4ec;
 }
 
@@ -330,40 +338,11 @@ textarea {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
   width: calc(33.333% - 1.6rem);
   border: 1px solid transparent;
+  cursor: pointer;
 }
 .project-card:hover {
   border-color: var(--color-primary);
   background-color: #fffaf7;
-}
-.project-card .card-header {
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-}
-.project-card .project-title {
-  font-size: var(--fs-lg);
-  font-weight: 600;
-  line-height: 1.2;
-}
-.project-card .project-meta {
-  display: flex;
-  font-size: var(--fs-sm);
-  color: #666;
-}
-.project-card .project-meta .project-type::after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 1.1rem;
-  background-color: #ccc;
-  margin: 0 0.8rem;
-}
-.project-card .project-subinfo {
-  display: flex;
-  flex-wrap: wrap;
-  font-size: var(--fs-sm);
-  color: #999;
-  gap: 0.2rem 0.8rem;
 }
 .project-card .card-body {
   margin-top: 1.2rem;
@@ -371,12 +350,64 @@ textarea {
   padding-top: 1.2rem;
   flex-grow: 1;
 }
-.project-card .desc-list .desc-item {
+.project-card .project-summary {
   font-size: 1.5rem;
   line-height: 1.7;
 }
 .project-card .btn-area {
   margin-top: 1.6rem;
+}
+
+.project-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.project-header .project-title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.project-header .project-meta {
+  display: flex;
+  font-size: var(--fs-sm);
+  color: #666;
+}
+.project-header .project-meta .project-type::after {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1.1rem;
+  background-color: #ccc;
+  margin: 0 0.8rem;
+}
+.project-header .skill-badge-list .badge-item {
+  padding: 0.4em 0.6em;
+  font-size: var(--fs-xs);
+  line-height: 1.2;
+}
+.project-header .project-subinfo {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: var(--fs-sm);
+  color: #999;
+  gap: 0.2rem 0.8rem;
+}
+
+.project-detail .detail-title {
+  font-size: var(--fs-base);
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+.project-detail .detail-list {
+  margin-bottom: 1.6rem;
+}
+.project-detail .detail-list:last-child {
+  margin-bottom: 0;
+}
+.project-detail .detail-list .list-item {
+  font-size: 1.5rem;
+  line-height: 1.7;
 }
 
 .contact-form {
@@ -393,6 +424,92 @@ textarea {
 .contact-form .btn-area {
   display: flex;
   justify-content: flex-end;
+}
+
+body.modal-open {
+  overflow: hidden;
+  height: 100vh;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.dimm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+}
+.dimm.active {
+  display: block;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  width: 48rem;
+  height: 50rem;
+  border-radius: 1rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  z-index: 105;
+}
+.modal.active {
+  display: block;
+}
+.modal .modal-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.modal .modal-inner .modal-header {
+  padding: 2.4rem 2.4rem 1.6rem;
+}
+.modal .modal-inner .modal-content {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2.4rem;
+}
+.modal .modal-inner .modal-content .project-header {
+  flex-shrink: 0;
+  border-bottom: 1px dashed #ddd;
+  padding-bottom: 1.6rem;
+}
+.modal .modal-inner .modal-content .project-detail {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding-top: 1.6rem;
+}
+.modal .modal-inner .modal-content .btn-area {
+  flex-shrink: 0;
+  padding: 1.6rem 0 2.4rem;
+}
+.modal .modal-title {
+  font-size: var(--fs-lg);
+  font-weight: 600;
+  line-height: 1.2;
+}
+.modal .btn-close {
+  position: absolute;
+  top: 2.2rem;
+  right: 2.2rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: #666;
 }
 
 .toast {
@@ -429,5 +546,19 @@ textarea {
 @media (max-width: 480px) {
   .project-card {
     width: 100%;
+  }
+  .modal {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    top: 0;
+    left: 0;
+    transform: none;
+  }
+  .modal .modal-inner .modal-header {
+    padding: 2.4rem 2rem 1.6rem;
+  }
+  .modal .modal-inner .modal-content {
+    padding: 0 2rem;
   }
 }/*# sourceMappingURL=style.css.map */
