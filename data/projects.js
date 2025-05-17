@@ -96,7 +96,7 @@ const projects = [
       "블랙프라이데이, 멤버스위크 등 대형 이벤트 페이지 퍼블리싱",
       "기획전, 유입제어 페이지 등 다양한 이벤트 섹션 작업",
       "Swiper·Slick 슬라이더 및 Waypoint, GSAP 기반 스크롤 애니메이션 구현",
-      "YouTube API 및 html2canvas 기능 적용",
+      "YouTube API를 이용한 동영상 자동재생 및 html2canvas 이용한 이미지 캡쳐 기능 적용",
       "눈송이 및 타이핑 등 CSS 애니메이션 구현",
       "퍼블리싱 가이드 문서화"
     ],
