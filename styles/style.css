@@ -426,15 +426,6 @@ textarea {
   justify-content: flex-end;
 }
 
-body.modal-open {
-  overflow: hidden;
-  height: 100vh;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-}
-
 .dimm {
   position: fixed;
   top: 0;

@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dimm.classList.add('active');
     modal.classList.add('active');
-    document.body.classList.add('modal-open'); // 바디스크롤 방지 
+    lockScroll(); // 바디스크롤 잠금
 
     closeBtn.addEventListener('click', closeModal); // 모달 닫기
   }
@@ -201,7 +201,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     dimm.classList.remove('active');
     modal.classList.remove('active');
-    document.body.classList.remove('modal-open'); // 바디스크롤복구
+    unlockScroll();// 바디스크롤 복구
+  }
+
+  // 바디 스크롤 잠금
+  function lockScroll() {
+    const scrollY = window.scrollY;
+    document.body.dataset.scrollY = scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = '100%';
+  }
+  // 바디 스크롤 복구
+  function unlockScroll() {
+    const scrollY = parseInt(document.body.dataset.scrollY || '0');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, scrollY);
+    document.body.removeAttribute('data-scroll-y');
   }
 
   // toast
