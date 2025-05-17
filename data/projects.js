@@ -40,7 +40,6 @@ const projects = [
     tools: ['HTML', 'CSS', 'JavaScript', 'jQuery', 'PhotoShop'],
     summery: "KBS 시청자 의견 수렴 및 정보공개 서비스 제공을 위한 시청자센터 웹사이트의 반응형 리뉴얼 프로젝트입니다.",
     description: [
-      "KBS 시청자센터, 고충처리, 정보공개, 청원, 견학 안내 등 주요 섹션 리뉴얼 퍼블리싱",
       "Swiper 슬라이더 구성 및 data-* 속성을 활용한 슬라이드 제어 로직 구현",
       "웹 접근성 대응을 위한 마크업 설계 (키보드 조작, 대체 텍스트 등)",
       "Figma 기반 디자인 협업 및 Git 버전 관리"
